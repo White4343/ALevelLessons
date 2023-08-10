@@ -1,6 +1,7 @@
 ﻿using System;
 using HelloMessagesLib;
 using LowLevelMathematicsLib;
+using MathematicsLib;
 
 namespace LessonOneALevel
 {
@@ -11,8 +12,11 @@ namespace LessonOneALevel
 
             HelloMessagesLib.HelloMessages.HelloMessageNameFunction();
             HelloMessagesLib.HelloMessages.HelloWorldFunction();
+
             LowLevelMathematicsLib.LowLevelMath.TwoPlusTwo();
             LowLevelMathematicsLib.LowLevelMath.TwoMinusTwo();
+
+            MathematicsLib.Math.IntPlusInt(4, 4);
 
             Console.WriteLine("Enter any key to exit");
             Console.ReadKey(true);
