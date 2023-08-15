@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonOneALevel", "LessonOneALevel\LessonOneALevel.csproj", "{1EC5E81F-2A3C-4B15-A2D3-FAD87DCACA87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonOneALevel", "LessonOneALevel\LessonOneALevel.csproj", "{1EC5E81F-2A3C-4B15-A2D3-FAD87DCACA87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMessagesLib", "HelloWorldLib\HelloMessagesLib.csproj", "{132E47B6-7A22-4C83-AE94-DD2A80564092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloMessagesLib", "HelloWorldLib\HelloMessagesLib.csproj", "{132E47B6-7A22-4C83-AE94-DD2A80564092}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowLevelMathematicsLib", "LowLevelMathematicsLib\LowLevelMathematicsLib.csproj", "{575F51B7-6265-44DC-A5C0-B6AFC2C66D05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LowLevelMathematicsLib", "LowLevelMathematicsLib\LowLevelMathematicsLib.csproj", "{575F51B7-6265-44DC-A5C0-B6AFC2C66D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicsLib", "MatheticsLib\MathematicsLib.csproj", "{133FD193-19BE-4C02-8AA7-5464450CDF46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathematicsLib", "MatheticsLib\MathematicsLib.csproj", "{133FD193-19BE-4C02-8AA7-5464450CDF46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonOneModuleTwo", "LessonOneModuleTwo", "{B8E4BBA7-ED81-42A4-A27A-96B3B1042EE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstTaskArrayRangeCounter", "FirstTaskArrayRangeCounter\FirstTaskArrayRangeCounter.csproj", "{1BAB564C-D61D-4B23-BC5D-257A501322F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondTaskArrayCopy", "SecondTaskArrayCopy\SecondTaskArrayCopy.csproj", "{AFE7430F-1331-4680-BDA1-E7B583C8AE52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,21 @@ Global
 		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAB564C-D61D-4B23-BC5D-257A501322F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAB564C-D61D-4B23-BC5D-257A501322F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAB564C-D61D-4B23-BC5D-257A501322F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAB564C-D61D-4B23-BC5D-257A501322F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1BAB564C-D61D-4B23-BC5D-257A501322F8} = {B8E4BBA7-ED81-42A4-A27A-96B3B1042EE9}
+		{AFE7430F-1331-4680-BDA1-E7B583C8AE52} = {B8E4BBA7-ED81-42A4-A27A-96B3B1042EE9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE25789E-E68A-4CE4-B65A-8F9BC5908E4B}
