@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMessagesLib", "HelloWo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowLevelMathematicsLib", "LowLevelMathematicsLib\LowLevelMathematicsLib.csproj", "{575F51B7-6265-44DC-A5C0-B6AFC2C66D05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicsLib", "MatheticsLib\MathematicsLib.csproj", "{133FD193-19BE-4C02-8AA7-5464450CDF46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{575F51B7-6265-44DC-A5C0-B6AFC2C66D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{575F51B7-6265-44DC-A5C0-B6AFC2C66D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{575F51B7-6265-44DC-A5C0-B6AFC2C66D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{133FD193-19BE-4C02-8AA7-5464450CDF46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

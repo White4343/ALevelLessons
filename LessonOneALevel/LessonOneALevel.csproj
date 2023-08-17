@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HelloWorldLib\HelloMessagesLib.csproj" />
     <ProjectReference Include="..\LowLevelMathematicsLib\LowLevelMathematicsLib.csproj" />
+    <ProjectReference Include="..\MatheticsLib\MathematicsLib.csproj" />
   </ItemGroup>
 
 </Project>
