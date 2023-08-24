@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonOneModuleTwo", "Lesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstTaskArrayRangeCounter", "FirstTaskArrayRangeCounter\FirstTaskArrayRangeCounter.csproj", "{1BAB564C-D61D-4B23-BC5D-257A501322F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondTaskArrayCopy", "SecondTaskArrayCopy\SecondTaskArrayCopy.csproj", "{AFE7430F-1331-4680-BDA1-E7B583C8AE52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecondTaskArrayCopy", "SecondTaskArrayCopy\SecondTaskArrayCopy.csproj", "{AFE7430F-1331-4680-BDA1-E7B583C8AE52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonOneFinalModuleHW", "LessonOneFinalModuleHW\LessonOneFinalModuleHW.csproj", "{A5F01DCB-D15D-4FAA-96B9-0CB4FA7BE537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFE7430F-1331-4680-BDA1-E7B583C8AE52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F01DCB-D15D-4FAA-96B9-0CB4FA7BE537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F01DCB-D15D-4FAA-96B9-0CB4FA7BE537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F01DCB-D15D-4FAA-96B9-0CB4FA7BE537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F01DCB-D15D-4FAA-96B9-0CB4FA7BE537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
