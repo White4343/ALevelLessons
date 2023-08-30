@@ -15,13 +15,6 @@ namespace LoggerApp
         private static readonly Logger instance = new Logger();
         private List<object> _logs = new List<object>();
 
-        public Logger(DateTime dateOfLog, string logType, string message)
-        {
-            _dateOfLog = dateOfLog;
-            _logType = logType;
-            _message = message;
-        }
-
         public static Logger Instance
         {
             get => instance;
@@ -30,6 +23,13 @@ namespace LoggerApp
         static Logger() {}
 
         private Logger() {}
+
+        private Logger(DateTime dateOfLog, string logType, string message)
+        {
+            _dateOfLog = dateOfLog;
+            _logType = logType;
+            _message = message;
+        }
 
         public void AddLogData(string logType, string message)
         {
