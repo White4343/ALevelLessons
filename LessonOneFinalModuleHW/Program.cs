@@ -17,7 +17,7 @@ namespace LessonOneFinalModuleHW
             {
                 Console.WriteLine("Command list: \n add-item\n remove-item\n mark-as\n show\n exit");
 
-                string userCommandStr = Console.ReadLine(); ;
+                string? userCommandStr = Console.ReadLine(); ;
 
                 switch (userCommandStr)
                 {
@@ -26,12 +26,12 @@ namespace LessonOneFinalModuleHW
                         break;
                     case "add-item":
                         Console.WriteLine("Please write task-item:");
-                        string userTask = Console.ReadLine();
+                        string? userTask = Console.ReadLine();
                         taskArray = AddItemFunc(taskArray, userTask).ToArray();
                         continue;
                     case "remove-item":
                         Console.WriteLine("Please write task-item:");
-                        string userTaskDelete = Console.ReadLine();
+                        string? userTaskDelete = Console.ReadLine();
 
                         if (userTaskDelete == "*")
                         {
@@ -43,23 +43,16 @@ namespace LessonOneFinalModuleHW
                         }
                         else
                         {
-                            (taskArray, finishedTaskArray, datesOfFinishedTaskArray) = DeleteItemFunc(taskArray, finishedTaskArray, datesOfFinishedTaskArray, userTaskDelete);
+                            DeleteItemFunc(ref taskArray, ref finishedTaskArray, ref datesOfFinishedTaskArray, userTaskDelete);
                         }
-
                         continue;
                     case "show":
                         Console.WriteLine("Sub-command:\n1 - task done\n0 - task not done");
-                        string userCmdLine = Console.ReadLine();
+                        string? userCmdLine = Console.ReadLine();
                         PrintArray(taskArray, finishedTaskArray, datesOfFinishedTaskArray, userCmdLine);
                         continue;
                     case "mark-as":
-                        Console.WriteLine("Sub-command:\n1 - task done\n0 - task not done");
-                        string userStatus = Console.ReadLine();
-                        Console.WriteLine("Please write task-item:");
-                        string userTaskLine = Console.ReadLine();
-
-                        (taskArray, finishedTaskArray, datesOfFinishedTaskArray) =
-                            MarkAsFunc(taskArray, finishedTaskArray, datesOfFinishedTaskArray, userTaskLine, userStatus);
+                        MarkAsFunc(ref taskArray, ref finishedTaskArray, ref datesOfFinishedTaskArray);
                         continue;
                 }
             }
@@ -72,68 +65,68 @@ namespace LessonOneFinalModuleHW
             return value;
         }
 
-        static string[] AddItemFunc(string[] array, string value)
+        static string[] AddItemFunc(string[] array, string? value)
         {
-            if (value == String.Empty)
+            if (string.IsNullOrEmpty(value))
             {
                 Console.WriteLine("You're task-item is empty!");
+                return array;
             }
 
+            value = value.ToLower();
+
+            string valueEmpty = FindItemInArray(array, value);
+
+            string valueEmptyLower = valueEmpty.ToLower();
+
+            if ((valueEmpty != null && !DateTime.TryParse(value, out DateTime Temp)) || valueEmptyLower == value)
+            {
+                Console.WriteLine("You're task-item is already there!");
+            }
             else
             {
-                array = Array.ConvertAll(array, x => x.ToLower()).ToArray();
-
-                value = value.ToLower();
-
-                string valueEmpty = Array.Find(array, i => i.StartsWith(value, StringComparison.Ordinal));
-
-                if (valueEmpty != null && !DateTime.TryParse(value, out DateTime Temp))
-                {
-                    Console.WriteLine("You're task-item is already there!");
-                }
-                else
-                {
-                    array = array.Append(value).ToArray();
-                    Console.WriteLine($"You're task-item '{value}' was added!");
-                }
+                array = array.Append(value).ToArray();
+                Console.WriteLine($"You're task-item '{value}' was added!");
             }
 
             return array;
         }
 
-        static (string[] taskArray, string[] finishedTaskArray, string[] dateArray) DeleteItemFunc(string[] taskArray, string[] finishedTaskArray, string[] dateArray, string value)
+        static string FindItemInArray(string[] array, string value)
         {
-            if (value == String.Empty)
-            {
-                Console.WriteLine("You're task-item is empty!");
-            }
-
-            else
-            {
-                string taskArrayEmpty = Array.Find(taskArray, i => i.StartsWith(value, StringComparison.Ordinal));
-                string finishedTaskArrayEmpty = Array.Find(finishedTaskArray, i => i.StartsWith(value, StringComparison.Ordinal));
-
-                if (taskArrayEmpty != null && finishedTaskArrayEmpty == null)
-                {
-                    taskArray = taskArray.Where(i => i != value).ToArray();
-                }
-                else if (finishedTaskArrayEmpty != null && taskArrayEmpty == null)
-                {
-                    int indexDate = Array.FindIndex(finishedTaskArray, i => i.StartsWith(value, StringComparison.Ordinal));
-                    dateArray = dateArray.Where((source, index) => index != indexDate).ToArray();
-                    finishedTaskArray = finishedTaskArray.Where(i => i != value).ToArray();
-                    Console.WriteLine($"You're task-item '{value}' was deleted!");
-                }
-                else
-                {
-                    Console.WriteLine("You're task-item is not there!");
-                }
-            }
-
-            return (taskArray, finishedTaskArray, dateArray);
+            string? result = Array.Find(array, i => i.Equals(value, StringComparison.Ordinal));
+            return result;
         }
 
-        static void PrintArray(string[] taskArray, string[] finishedTaskArray, string[] dateArray, string status)
+        static void DeleteItemFunc(ref string[] taskArray, ref string[] finishedTaskArray, ref string[] dateArray, string? value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                Console.WriteLine("You're task-item is empty!");
+                return;
+            }
+
+            string taskArrayEmpty = FindItemInArray(taskArray, value);
+            string finishedTaskArrayEmpty = FindItemInArray(finishedTaskArray, value);
+
+            if (taskArrayEmpty != null && finishedTaskArrayEmpty == null)
+            {
+                taskArray = taskArray.Where(i => i != value).ToArray();
+            }
+            else if (finishedTaskArrayEmpty != null && taskArrayEmpty == null)
+            {
+                int indexDate = Array.FindIndex(finishedTaskArray, i => i.Equals(value, StringComparison.Ordinal));
+                dateArray = dateArray.Where((source, index) => index != indexDate).ToArray();
+                finishedTaskArray = finishedTaskArray.Where(i => i != value).ToArray();
+                Console.WriteLine($"You're task-item '{value}' was deleted!");
+            }
+            else
+            {
+                    Console.WriteLine("You're task-item is not there!");
+            }
+        }
+
+        static void PrintArray(string[] taskArray, string[] finishedTaskArray, string[] dateArray, string? status)
         {
             if (status == "1")
             {
@@ -148,7 +141,7 @@ namespace LessonOneFinalModuleHW
                 Console.WriteLine(" {0} ", string.Join(" \n ", taskArray));
 
             }
-            else if (status == String.Empty)
+            else if (string.IsNullOrEmpty(status))
             {
                 Console.WriteLine("[Active]");
                 Console.WriteLine(" {0} ", string.Join(" \n  ", taskArray));
@@ -163,83 +156,87 @@ namespace LessonOneFinalModuleHW
             }
         }
 
-        static (string[] taskArray, string[] finishedTaskArray, string[] dateArray) MarkAsFunc(string[] taskArray, string[] finishedTaskArray, string[] dateArray, string value, string status)
+        static void MarkAsFunc(ref string[]  taskArray, ref string[] finishedTaskArray, ref string[] dateArray)
         {
+            Console.WriteLine("Sub-command:\n1 - task done\n0 - task not done");
+            string? status = Console.ReadLine();
+            Console.WriteLine("Please write task-item:");
+            string? value = Console.ReadLine();
 
-            if (value == String.Empty)
+
+            if (string.IsNullOrEmpty(value))
             {
                 Console.WriteLine("You're task-item is empty!");
+                return;
             }
 
-            else
-            {
-                if (int.TryParse(status, out int statusResult))
-                {
-                    if (statusResult == 0) // task is not finished
-                    {
-                        string valueEmpty = Array.Find(finishedTaskArray, i => i.StartsWith(value, StringComparison.Ordinal));
 
-                        if (valueEmpty != null)
+            if (int.TryParse(status, out int statusResult))
+            {
+                if (statusResult == 0) // task is not finished
+                {
+                    string valueEmpty = FindItemInArray(finishedTaskArray, value);
+
+                    if (valueEmpty != null)
+                    {
+                        int indexDate = Array.FindIndex(finishedTaskArray, i => i.Equals(value, StringComparison.Ordinal));
+                        DeleteItemFunc(ref taskArray, ref finishedTaskArray, ref dateArray, value);
+                        dateArray = dateArray.Where((source, index) => index != indexDate).ToArray();
+                        taskArray = AddItemFunc(taskArray, value).ToArray();
+                        Console.WriteLine("All data added!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You're task-item is not there!");
+                    }
+
+                }
+                else if (statusResult == 1) // task is finished
+                {
+                    string valueEmpty = FindItemInArray(taskArray, value);
+
+                    if (valueEmpty != null)
+                    {
+                        Console.WriteLine("Please enter date in format DD.MM.YYYY:");
+                        string? userDateLine = Console.ReadLine();
+
+                        if (string.IsNullOrEmpty(userDateLine))
                         {
-                            int indexDate = Array.FindIndex(finishedTaskArray, i => i.StartsWith(value, StringComparison.Ordinal));
-                            (taskArray, finishedTaskArray, dateArray) = DeleteItemFunc(taskArray, finishedTaskArray, dateArray, value);
-                            dateArray = dateArray.Where((source, index) => index != indexDate).ToArray();
-                            taskArray = AddItemFunc(taskArray, value).ToArray();
+                            userDateLine = DateTime.Now.ToShortDateString();
+                        }
+
+                        if (DateTime.TryParse(userDateLine, out DateTime Temp))
+                        {
+                            DeleteItemFunc(ref taskArray, ref finishedTaskArray, ref dateArray, value);
+                            finishedTaskArray = AddItemFunc(finishedTaskArray, value).ToArray();
+                            dateArray = AddItemFunc(dateArray, userDateLine).ToArray();
+
                             Console.WriteLine("All data added!");
                         }
                         else
                         {
-                            Console.WriteLine("You're task-item is not there!");
+                            Console.WriteLine("You're entered date is not in format DD/MM/YYYY:");
                         }
-
-                    }
-                    else if (statusResult == 1) // task is finished
-                    {
-                        string valueEmpty = Array.Find(taskArray, i => i.StartsWith(value, StringComparison.Ordinal));
-
-                        if (valueEmpty != null)
-                        {
-                            Console.WriteLine("Please enter date in format DD.MM.YYYY:");
-                            string userDateLine = Console.ReadLine();
-
-                            if (userDateLine == String.Empty)
-                            {
-                                userDateLine = DateTime.Now.ToShortDateString();
-                            }
-
-                            if (DateTime.TryParse(userDateLine, out DateTime Temp))
-                            {
-                                (taskArray, finishedTaskArray, dateArray) = DeleteItemFunc(taskArray, finishedTaskArray, dateArray, value);
-                                finishedTaskArray = AddItemFunc(finishedTaskArray, value).ToArray();
-                                dateArray = AddItemFunc(dateArray, userDateLine).ToArray();
-
-                                Console.WriteLine("All data added!");
-                            }
-                            else
-                            {
-                                Console.WriteLine("You're entered date is not in format DD/MM/YYYY:");
-                            }
                             
-                        }
-                        else
-                        {
-                            Console.WriteLine("You're task-item is not there!");
-                        }
-
                     }
                     else
                     {
-                        Console.WriteLine("You're status doesn't in a range between [0;1]");
+                        Console.WriteLine("You're task-item is not there!");
                     }
-                }
 
+                }
                 else
                 {
-                    Console.WriteLine("You're status is not a number");
+                    Console.WriteLine("You're status doesn't in a range between [0;1]");
                 }
             }
 
-            return (taskArray, finishedTaskArray, dateArray);
+            else
+            {
+                Console.WriteLine("You're status is not a number");
+            }
+            
+
         }
     }
 }
