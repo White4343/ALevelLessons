@@ -6,6 +6,7 @@
         {
             Starter.Run();
             Logger.Instance.PrintLoggedData();
+            Logger.Instance.LogsToTxt();
         }
     }
 }

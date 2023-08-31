@@ -6,12 +6,31 @@ using System.Threading.Tasks;
 
 namespace LoggerApp
 {
+    public struct Result
+    {
+        private readonly DateTime _dateOfLog = DateTime.Now;
+        private string _logType;
+        private string _message;
+
+        public Result(string logType, string message)
+        {
+            _logType = logType;
+            _message = message;
+        }
+
+        public override string ToString()
+        {
+            return $"{_dateOfLog}: {_logType}: {_message}";
+        }
+    }
+
+
     public sealed class Logger
     {
-        private static readonly Logger instance = new Logger();
-        private List<object> _logs = new List<object>();
+        private static readonly Logger _instance = new Logger();
+        private List<Result> _logs = new List<Result>();
 
-        public static Logger Instance => instance;
+        public static Logger Instance => _instance;
 
         static Logger() {}
 
@@ -19,16 +38,20 @@ namespace LoggerApp
 
         public void AddLogData(string logType, string message)
         {
-            _logs.Add($"{DateTime.Now}: {logType}: {message}");
+            _logs.Add(new Result(logType, message));
         }
-
 
         public void PrintLoggedData()
         {
             foreach (var log in _logs)
             {
-                Console.WriteLine(log);
+                Console.WriteLine(log.ToString());
             }
+        }
+
+        public void LogsToTxt()
+        {
+            File.WriteAllText("log.txt", string.Join(Environment.NewLine, _logs));
         }
     }
 }
