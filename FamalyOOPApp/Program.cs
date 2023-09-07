@@ -8,7 +8,7 @@
             List<FamilyMember> familyMembers = new List<FamilyMember>();
 
             familyMembers.Add(new FamilyMember("Andrew", "10/04/1997", "Student", 1000));
-            familyMembers.Add(new FamilyMember("Katy", "11/05/2000", "Student", 500));
+            familyMembers.Add(new FamilyMember("Katy", "11/05/2000", "Student", 0));
             familyMembers.Add(new FamilyPatriarch("Jon", "10/03/1970", "Doctor", 10000, "10/11/2001"));
             familyMembers.Add(new FamilyMatriarch("Daphne", "11/12/1971", "Housewife", 1200, "21/03/2002", "Lovegood"));
 
@@ -40,6 +40,17 @@
             {
                 value.PrintInformation();
             }
+
+            var familyMembersPositiveMoney = familyMembers.ToList();
+
+            familyMembersPositiveMoney = familyMembers.FilterByPositiveMoney();
+
+            Console.WriteLine("Family where money count is positive:");
+            foreach (var value in familyMembersPositiveMoney)
+            {
+                value.PrintInformation();
+            }
+
         }
     }
 }
