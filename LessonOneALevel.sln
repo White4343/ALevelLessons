@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LessonOneFinalModuleHW", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerApp", "LoggerApp\LoggerApp.csproj", "{9640140F-1A81-4830-9E02-6C8FA52F27AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleConsoleOnlineStore", "SimpleConsoleOnlineStore\SimpleConsoleOnlineStore.csproj", "{AF4440DD-43B0-438F-865E-5E9B4BF0DC0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleConsoleOnlineStore", "SimpleConsoleOnlineStore\SimpleConsoleOnlineStore.csproj", "{AF4440DD-43B0-438F-865E-5E9B4BF0DC0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyOOPApp", "FamalyOOPApp\FamilyOOPApp.csproj", "{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{AF4440DD-43B0-438F-865E-5E9B4BF0DC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF4440DD-43B0-438F-865E-5E9B4BF0DC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF4440DD-43B0-438F-865E-5E9B4BF0DC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
