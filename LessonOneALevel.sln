@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerApp", "LoggerApp\Logg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleConsoleOnlineStore", "SimpleConsoleOnlineStore\SimpleConsoleOnlineStore.csproj", "{AF4440DD-43B0-438F-865E-5E9B4BF0DC0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyOOPApp", "FamalyOOPApp\FamilyOOPApp.csproj", "{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyOOPApp", "FamalyOOPApp\FamilyOOPApp.csproj", "{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleConsoleGameApp", "SimpleConsoloGameApp\SimpleConsoleGameApp.csproj", "{C39A82F6-E189-45E4-80F5-EABA82B38AFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58D6C342-96E6-4B0C-B806-BFFF5676B9F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39A82F6-E189-45E4-80F5-EABA82B38AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39A82F6-E189-45E4-80F5-EABA82B38AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39A82F6-E189-45E4-80F5-EABA82B38AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39A82F6-E189-45E4-80F5-EABA82B38AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
