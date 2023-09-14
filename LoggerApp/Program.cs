@@ -7,6 +7,7 @@
             Starter.Run();
             Logger.Instance.PrintLoggedData();
             Logger.Instance.LogsToTxt();
+            Logger.Instance.LogsToJson();
         }
     }
 }
