@@ -17,12 +17,28 @@ namespace LoggerApp
 
         public static void ErrorAdd()
         {
-            _log.AddLogData("Error", "Error message bruh");
+            try
+            {
+                throw new Exception("I broke logic");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _log.AddLogData("Error", e.Message);
+            }
         }
 
         public static void WarningAdd()
         {
-            _log.AddLogData("Warning", "Warning message bruh");
+            try
+            {
+                throw new Exception("Skipped logic in method");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                _log.AddLogData("Warning", e.Message);
+            }
         }
     }
 }
