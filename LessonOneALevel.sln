@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionApp", "Collection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateLINQApp", "DelegateLINQApp\DelegateLINQApp.csproj", "{5E701FAE-AFB7-4563-B276-7A0B36714839}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsApp", "AlgorithmsApp\AlgorithmsApp.csproj", "{6C694CFF-92AD-4396-9A2F-85DE41B1F8AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsApp", "AlgorithmsApp\AlgorithmsApp.csproj", "{6C694CFF-92AD-4396-9A2F-85DE41B1F8AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncApp", "AsyncApp\AsyncApp.csproj", "{ECB913F0-0E00-42E8-B40B-C5C98204921F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{6C694CFF-92AD-4396-9A2F-85DE41B1F8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C694CFF-92AD-4396-9A2F-85DE41B1F8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C694CFF-92AD-4396-9A2F-85DE41B1F8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB913F0-0E00-42E8-B40B-C5C98204921F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB913F0-0E00-42E8-B40B-C5C98204921F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB913F0-0E00-42E8-B40B-C5C98204921F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB913F0-0E00-42E8-B40B-C5C98204921F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
