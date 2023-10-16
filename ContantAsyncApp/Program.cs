@@ -1,10 +1,14 @@
-﻿namespace ContactAsyncApp
+﻿using ContactAsyncApp.Services;
+
+namespace ContactAsyncApp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ContactService contactService = await ContactService.Create();
+            App app = new(contactService);
+            app.Start();
         }
     }
 }
