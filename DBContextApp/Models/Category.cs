@@ -4,12 +4,12 @@ namespace DBContextApp.Models
 {
     public class Category
     {
-        [Key]
         public int Id { get; set; }
 
-        public required string CategoryName { get; set; }
+        public string CategoryName { get; set; }
 
         public ICollection<Pet> Pets { get; } = new List<Pet>();
+
         public ICollection<Breed> Breeds { get; } = new List<Breed>();
     }
 }

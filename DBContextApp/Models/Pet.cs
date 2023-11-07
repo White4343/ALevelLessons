@@ -1,27 +1,32 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DBContextApp.Models
 {
     public class Pet
     {
-        [Key]
         public int Id { get; set; }
 
-        public required string Name { get; set; }
+        public string Name { get; set; }
 
-        public required float Age { get; set; }
+        public float Age { get; set; }
 
-        public required string ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
 
-        public required string Description { get; set; }
+        public string Description { get; set; }
 
-        public int LocationId { get; set; }
-        public Location Location { get; set; } = null!;
+        public int? LocationId { get; set; }
+        public Location? Location { get; set; }
 
-        public int CategoryId { get; set; }
-        public Category Category { get; set; } = null!;
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; }
 
-        public int BreedId { get; set; }
-        public Breed Breed { get; set; } = null!;
+        public int? BreedId { get; set; }
+        public Breed? Breed { get; set; }
+
+        [ForeignKey("OwnerId")]
+        public Owner? Owner { get; set; }
+
+        public List<Pet> Pets { get; } = new();
     }
 }
