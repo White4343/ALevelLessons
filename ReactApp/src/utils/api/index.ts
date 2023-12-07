@@ -1,5 +1,6 @@
 import axios from "axios";
 import {IReqUser, IResource, IResources, IResPostUser, IResPutUser, IUser, IUsers} from "./types";
+import apiClient from './client'
 
 const baseAPI = axios.create({
     baseURL: `https://reqres.in/api`
@@ -32,3 +33,9 @@ export const ResourceAPI = {
         return baseAPI.get<IResource>(`/unknown/${resourceId}`).then(res => res.data)
     }
 }
+
+export const login = ({ email, password }: { email: string, password: string }) => apiClient({
+    path: `login`,
+    method: 'post',
+    data: { email, password }
+})

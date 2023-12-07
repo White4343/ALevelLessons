@@ -63,3 +63,11 @@ export interface IResourcesItem {
     "color": string,
     "pantone_value": string
 }
+
+export interface ILogUser {
+    'id': number,
+    'email': string,
+    'first_name': string,
+    'last_name': string,
+    'avatar': string
+}
