@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  practice.catalog.api:
+    build:
+        context: .
+        dockerfile: Practice/PracticeCatalog.Host/Dockerfile
+    environment:
+       - ASPNETCORE_ENVIRONMENT=Development
+       - ASPNETCORE_URLS=http://+:5001
+    ports:
+      - 5001:5001 
+  catalog.api:
+    build:
+      context: .
+      dockerfile: Catalog/Catalog.Host/Dockerfile
+    environment:
+       - ASPNETCORE_ENVIRONMENT=Development
+       - ASPNETCORE_URLS=http://+:5000
+    ports:
+      - 5000:5000
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+       - ./nginx-conf:/etc/nginx/conf.d

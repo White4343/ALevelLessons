@@ -41,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactAsyncApp", "ContantA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerImg", "DockerImg\DockerImg.csproj", "{5A4161D9-7F11-496E-9CDE-7BFC22A00F16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBContextApp", "DBContextApp\DBContextApp.csproj", "{4A50A584-1237-4453-8A4C-888D4851539A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBContextApp", "DBContextApp\DBContextApp.csproj", "{4A50A584-1237-4453-8A4C-888D4851539A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
