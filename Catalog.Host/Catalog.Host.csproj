@@ -5,7 +5,6 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <CodeAnalysisRuleSet>../../settings.ruleset</CodeAnalysisRuleSet>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
@@ -25,10 +24,6 @@
       <None Remove="Data\Setup\CatalogBrands.csv" />
       <None Remove="Data\Setup\CatalogItems.csv" />
       <None Remove="Data\Setup\CatalogTypes.csv" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Infrastructure\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
